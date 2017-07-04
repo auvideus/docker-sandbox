@@ -1,16 +1,18 @@
-FROM centos:centos7
+FROM fedora:25
 
 LABEL maintainer "auvideus@protonmail.com"
 
-RUN yum -y install epel-release \
-    && yum -y group install "Development Tools"
+#RUN yum -y install epel-release \
+#    && yum -y group install "Development Tools"
 
 VOLUME /opt/dev
 
 RUN groupadd auvideus && useradd -g auvideus -s /bin/fish auvideus
 
-RUN yum -y install \
+RUN dnf -y install \
     fish \
+    git \
+    hostname \
     mlocate \
     python-pip \
     salt \
@@ -23,9 +25,14 @@ RUN yum -y install \
 
 RUN pip install --upgrade pip
 
+# Current version, 2.0.0rc2, is not parsable by salt-cloud
+RUN pip install apache-libcloud==2.0.0
+
 RUN git config --global credential.helper store \
     && git config --global user.name auvideus \
     && git config --global user.email eric.august.huneke@protonmail.com
 
 COPY config/.git-credentials /root/.git-credentials
 COPY config/config.fish /root/.config/fish/config.fish
+
+CMD ["/bin/bash"]
