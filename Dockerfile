@@ -33,6 +33,9 @@ RUN git config --global credential.helper store \
     && git config --global user.name auvideus \
     && git config --global user.email eric.august.huneke@protonmail.com
 
+COPY config/salt/do_provider.conf /etc/salt/cloud.providers.d/do_provider.conf
+COPY config/salt/do_profiles.conf /etc/salt/cloud.profiles.d/do_profiles.conf
+
 COPY config/.git-credentials /root/.git-credentials
 COPY config/config.fish /root/.config/fish/config.fish
 
