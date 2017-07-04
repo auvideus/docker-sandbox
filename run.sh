@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Stopping sandbox" && \
-docker rm -f sandbox && \
+docker rm -f sandbox
 echo "Building sandbox" && \
 docker build --tag sandbox:latest . && \
 echo "Running sandbox" && \
