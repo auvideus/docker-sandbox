@@ -24,9 +24,10 @@ RUN dnf -y install \
     salt-syndic
 
 RUN pip install --upgrade pip
+RUN pip uninstall -y apache-libcloud
 
 # Current version, 2.0.0rc2, is not parsable by salt-cloud
-RUN pip install apache-libcloud==2.0.0
+#RUN pip install apache-libcloud==2.0.0
 
 RUN git config --global credential.helper store \
     && git config --global user.name auvideus \
