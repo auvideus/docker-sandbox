@@ -14,6 +14,7 @@ RUN dnf -y install \
     fish \
     git \
     hostname \
+    man \
     mlocate \
     python-pip \
     salt \
