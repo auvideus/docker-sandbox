@@ -11,6 +11,7 @@ VOLUME /opt/sdev
 RUN groupadd auvideus && useradd -g auvideus -s /bin/fish auvideus
 
 RUN dnf -y install \
+    ansible \
     fish \
     git \
     hostname \
