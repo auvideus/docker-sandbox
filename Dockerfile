@@ -2,9 +2,6 @@ FROM fedora:25
 
 LABEL maintainer "auvideus@protonmail.com"
 
-#RUN yum -y install epel-release \
-#    && yum -y group install "Development Tools"
-
 VOLUME /opt/dev
 VOLUME /opt/sdev
 
