@@ -5,3 +5,5 @@ cp /opt/sdev/security/id_rsa.pub /root/.ssh/id_rsa.pub
 chmod 666 /root/.ssh/id_rsa.pub
 
 set PATH /opt/web $PATH
+
+alias do "doctl -t (cat /opt/sdev/security/digital_ocean_token)"
