@@ -37,4 +37,6 @@ RUN git config --global credential.helper store \
 COPY config/.git-credentials /root/.git-credentials
 COPY config/config.fish /root/.config/fish/config.fish
 
+RUN updatedb
+
 CMD ["/bin/bash"]
