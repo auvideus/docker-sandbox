@@ -9,6 +9,8 @@ RUN groupadd auvideus && useradd -g auvideus -s /bin/fish auvideus
 
 RUN dnf -y install \
     ansible \
+    docker \
+    docker-compose \
     fish \
     git \
     hostname \
