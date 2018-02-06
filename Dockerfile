@@ -14,6 +14,7 @@ RUN dnf -y install \
     file \
     fish \
     git \
+    go \
     hostname \
     man \
     mlocate \
