@@ -9,6 +9,7 @@ RUN groupadd auvideus && useradd -g auvideus -s /bin/fish auvideus
 
 RUN dnf -y install \
     ansible \
+    certbot \
     docker \
     docker-compose \
     file \
@@ -23,6 +24,8 @@ RUN dnf -y install \
     wget
 
 RUN pip2 install --upgrade pip
+RUN pip2 install -y \
+    dopy
 
 RUN pip3 install --upgrade pip
 
