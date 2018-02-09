@@ -24,7 +24,7 @@ RUN dnf -y install \
     wget
 
 RUN pip2 install --upgrade pip
-RUN pip2 install -y \
+RUN pip2 install \
     dopy
 
 RUN pip3 install --upgrade pip
