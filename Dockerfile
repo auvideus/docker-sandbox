@@ -1,12 +1,14 @@
 FROM fedora:27
 
-LABEL maintainer "auvideus@protonmail.com"
-
+VOLUME /opt/home
 VOLUME /opt/dev
-VOLUME /opt/sdev
+VOLUME /opt/security
 
-RUN groupadd auvideus && useradd -g auvideus -s /bin/fish auvideus
+ARG user=sandbox
 
+RUN groupadd $user && useradd -g $user -s /bin/fish $user
+
+# OS packages
 RUN dnf -y install \
     ansible \
     certbot \
@@ -23,23 +25,21 @@ RUN dnf -y install \
     python3-pip \
     wget
 
+# Python 2 packages
 RUN pip2 install --upgrade pip
 RUN pip2 install \
     dopy
 
+# Python 3 packages
 RUN pip3 install --upgrade pip
 
+# Built software
 WORKDIR /opt/web
 
 RUN curl -L -o doctl.tar.gz https://github.com/digitalocean/doctl/releases/download/v1.7.1/doctl-1.7.1-linux-amd64.tar.gz \
     && tar -zxvf doctl.tar.gz
 
-RUN git config --global credential.helper store \
-    && git config --global user.name auvideus \
-    && git config --global user.email eric.huneke@protonmail.com
-
-COPY config/.git-credentials /root/.git-credentials
-COPY config/config.fish /root/.config/fish/config.fish
+COPY config.fish /root/.config/fish/config.fish
 
 RUN updatedb
 

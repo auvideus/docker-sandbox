@@ -1,13 +1,38 @@
 # docker-sandbox
 
-Instructions:
-1. Install Docker for Windows
-1. Install Git for Windows
-1. Create `C:\Users\auvideus\.bashrc` and place the following code:  
-   ```
-   cd /d/no-sync/dev/repos/docker-sandbox
-   ./run.sh
-   ```
-1. Pin Git Bash to the task bar
+This is a docker sandbox environment for Windows 10 hosts using Git Bash.  Git Bash and Docker for Windows must be installed as prerequisites.
 
-Now when you open Git Bash on the task bar, it will build the latest container and enter it.
+## Host file system structure
+
+The Dockerfile assumes three directory structures are present on the host:
+
+```
+C:/Users/<user> # normal Windows user home directory
+    .gitconfig
+.../docker
+    gopath # GOPATH on the host points here
+    repos # directory containing local clones of repositories
+.../security # security tokens
+    .git-credentials
+    id_rsa
+    id_rsa.pub
+```
+
+## Running the sandbox
+
+Edit the `.bashrc` file in your home directory on the host to configure the environment.
+
+Specify the locations of the three root directories mentioned above:
+
+```
+export VOL_DEV=...
+export VOL_HOME=...
+export VOL_SECURITY=...
+```
+
+To run the environment, run the following.  This can be placed at the end of the `.bashrc` file to have it run automatically upon entering Git Bash, which can be pinned to the Windows task bar.
+
+```
+cd /d/no-sync/dev/repos/docker-sandbox
+./run.sh
+```
