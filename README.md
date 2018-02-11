@@ -1,5 +1,3 @@
-# docker-sandbox
-
 This is a docker sandbox environment for Windows 10 hosts using Git Bash.  Git Bash and Docker for Windows must be installed as prerequisites.
 
 ## Host file system structure
