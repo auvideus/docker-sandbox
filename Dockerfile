@@ -23,7 +23,8 @@ RUN dnf -y install \
     mlocate \
     python2-pip \
     python3-pip \
-    wget
+    wget \
+    which
 
 # Python 2 packages
 RUN pip2 install --upgrade pip
