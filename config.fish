@@ -8,6 +8,7 @@ cp /opt/home/.gitconfig /root/.gitconfig
 cp /opt/security/.git-credentials /root/.git-credentials
 
 set -x GOPATH /opt/dev/gopath
+set -x GOBIN /opt/dev/gopath/bin
 
 set PATH $GOPATH/bin /opt/web $PATH
 
