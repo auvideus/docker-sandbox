@@ -7,8 +7,8 @@ chmod 666 /root/.ssh/id_rsa.pub
 cp /opt/home/.gitconfig /root/.gitconfig
 cp /opt/security/.git-credentials /root/.git-credentials
 
-set PATH /opt/web $PATH
-
 set -x GOPATH /opt/dev/gopath
+
+set PATH $GOPATH/bin /opt/web $PATH
 
 alias do "doctl -t (cat /opt/security/digital_ocean_token)"
