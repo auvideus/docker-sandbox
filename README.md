@@ -26,11 +26,12 @@ Specify the locations of the three root directories mentioned above:
 export VOL_DEV=...
 export VOL_HOME=...
 export VOL_SECURITY=...
+# note: user c:/some/directory syntax
 ```
 
 To run the environment, run the following.  This can be placed at the end of the `.bashrc` file to have it run automatically upon entering Git Bash, which can be pinned to the Windows task bar.
 
 ```
-cd /d/no-sync/dev/repos/docker-sandbox
+cd <path to clone of this repo>
 ./run.sh
 ```
