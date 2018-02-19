@@ -8,7 +8,7 @@ set GIT_NAME (git config -f /opt/home/.gitconfig --get user.name)
 set GIT_EMAIL (git config -f /opt/home/.gitconfig --get user.email)
 git config --global user.name $GIT_NAME
 git config --global user.email $GIT_EMAIL
-git config credential.helper store
+git config --global credential.helper store
 
 cp /opt/security/.git-credentials /root/.git-credentials
 
