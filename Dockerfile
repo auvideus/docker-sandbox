@@ -46,4 +46,4 @@ COPY config.fish /root/.config/fish/config.fish
 
 RUN updatedb
 
-CMD ["/usr/bin/fish"]
+CMD ["/usr/bin/fish", "--login"]

@@ -1,10 +1,5 @@
 #!/bin/bash
 
-echo -e "----> REMOVING SANDBOX ENVIRONMENT\n"
-
-docker rm --force sandbox
-set -e
-
 echo -e "\n----> BUILDING SANDBOX ENVIRONMENT\n"
 
 docker build \
@@ -19,6 +14,7 @@ docker run \
     --name sandbox \
     --hostname localhost \
     --rm \
+    --interactive \
     --tty \
     --detach \
     -v $VOL_HOME:/opt/home \
@@ -29,4 +25,4 @@ docker run \
 
 echo -e "\n----> RUNNING SANDBOX ENVIRONMENT\n"
 
-winpty docker exec -it sandbox fish
+winpty docker attach sandbox
