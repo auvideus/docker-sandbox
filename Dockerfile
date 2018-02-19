@@ -23,6 +23,7 @@ RUN dnf -y install \
     mlocate \
     python2-pip \
     python3-pip \
+    rsync \
     wget \
     which
 
