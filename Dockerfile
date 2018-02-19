@@ -24,6 +24,7 @@ RUN dnf -y install \
     python2-pip \
     python3-pip \
     rsync \
+    vim \
     wget \
     which
 
