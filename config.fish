@@ -16,12 +16,18 @@ if status --is-login
     mkdir -p /root/.local/share/fish
 
     set -x GOPATH /opt/dev/gopath
+    set -x REPOS /opt/dev/repos
+    set -x GOSRC /opt/dev/gopath/src/github.com/$GIT_NAME
 
     ln --symbolic --force \
         /opt/home/.local/share/fish/fish_history \
         /root/.local/share/fish/fish_history
 
     alias do "doctl -t (cat /opt/security/digital_ocean_token)"
+    alias repos "cd $REPOS"
+    alias gos "cd $GOSRC"
 
     set -x PATH $GOPATH/bin /opt/web $PATH
+
+    repos
 end
