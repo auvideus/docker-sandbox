@@ -12,6 +12,9 @@ git config --global credential.helper store
 
 cp /opt/security/.git-credentials /root/.git-credentials
 
+mkdir -p /root/.local/share/fish
+ln -s /opt/home/.local/share/fish/fish_history /root/.local/share/fish/fish_history
+
 set -x GOPATH /opt/dev/gopath
 set -x GOBIN /opt/dev/gopath/bin
 
