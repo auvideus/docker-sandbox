@@ -19,7 +19,7 @@ C:/Users/<user>/ # normal Windows user home directory
     id_rsa.pub
 ```
 
-Make sure your email and user are set in the `.gitconfig` file.
+Make sure your email and user are set in the `.gitconfig` file.  Setting a Git proxy is optional and will be copied only if it is set on the host.
 
 Additionally, since the container assumes Git credentials will be in a file provided by the host, it makes sense to use the *store* type credentials on the host as well, which is achieved with the command below.  You may also want to make sure you don't install the Windows credential manager when installing Git.
 

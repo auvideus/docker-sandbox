@@ -7,8 +7,16 @@ if status --is-login
 
     set -l GIT_NAME (git config -f /opt/home/.gitconfig --get user.name)
     set -l GIT_EMAIL (git config -f /opt/home/.gitconfig --get user.email)
+    set -l GIT_PROXY_HTTPS (git config -f /opt/home/.gitconfig --get https.proxy)
+    set -l GIT_PROXY_HTTP (git config -f /opt/home/.gitconfig --get http.proxy)
     git config --global user.name $GIT_NAME
     git config --global user.email $GIT_EMAIL
+    if [ GIT_PROXY_HTTPS ]
+        git config --global https.proxy $GIT_PROXY_HTTPS
+    end
+    if [ GIT_PROXY_HTTP ]
+        git config --global http.proxy $GIT_PROXY_HTTP
+    end
     git config --global credential.helper store
 
     cp /opt/security/.git-credentials /root/.git-credentials
