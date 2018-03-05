@@ -7,16 +7,27 @@ This is a docker sandbox environment for Windows 10 hosts using Git Bash.  Git B
 The Dockerfile assumes three directory structures are present on the host:
 
 ```
-C:/Users/<user> # normal Windows user home directory
+C:/Users/<user>/ # normal Windows user home directory
     .gitconfig
-.../docker
-    gopath # GOPATH on the host points here
-    repos # directory containing local clones of repositories
-.../security # security tokens
+.../docker/
+    gopath/ # GOPATH on the host points here
+        bin/
+    repos/ # directory containing local clones of repositories
+.../security/ # security tokens
     .git-credentials
     id_rsa
     id_rsa.pub
 ```
+
+Make sure your email and user are set in the `.gitconfig` file.
+
+Additionally, since the container assumes Git credentials will be in a file provided by the host, it makes sense to use the *store* type credentials on the host as well, which is achieved with the command below.  You may also want to make sure you don't install the Windows credential manager when installing Git.
+
+`git config --global credential.helper 'store --file .../security/.git-credentials'`
+
+To store a GitHub token, put a line with this format in the file:
+ 
+`https://<user>:<token>@github.com`
 
 ## Running the sandbox
 
