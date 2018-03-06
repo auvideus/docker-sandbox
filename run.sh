@@ -22,6 +22,7 @@ docker run \
     -v $VOL_SECURITY:/opt/security \
     -v //var/run/docker.sock:/var/run/docker.sock \
     sandbox:latest
+docker logs sandbox
 
 echo -e "\n----> RUNNING SANDBOX ENVIRONMENT\n"
 
