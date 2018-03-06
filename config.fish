@@ -31,6 +31,8 @@ if status --is-login
     set -x REPOS /opt/dev/repos
     set -x GOSRC /opt/dev/gopath/src/github.com/$GIT_NAME
 
+    mkdir -p /opt/home/.local/share/fish
+    touch /opt/home/.local/share/fish/fish_history
     ln --symbolic --force \
         /opt/home/.local/share/fish/fish_history \
         /root/.local/share/fish/fish_history
