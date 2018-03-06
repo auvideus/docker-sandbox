@@ -11,13 +11,17 @@ if status --is-login
     set -l GIT_PROXY_HTTP (git config -f /opt/home/.gitconfig --get http.proxy)
     git config --global user.name $GIT_NAME
     git config --global user.email $GIT_EMAIL
-    if [ GIT_PROXY_HTTPS ]
+    if [ $GIT_PROXY_HTTPS ]
         git config --global https.proxy $GIT_PROXY_HTTPS
     end
-    if [ GIT_PROXY_HTTP ]
+    if [ $GIT_PROXY_HTTP ]
         git config --global http.proxy $GIT_PROXY_HTTP
     end
     git config --global credential.helper store
+
+    if [ $SANDBOX_REPO_NAME ]
+        python3 /opt/dev/repos/$SANDBOX_REPO_NAME/gitauth.py
+    end
 
     cp /opt/security/.git-credentials /root/.git-credentials
 

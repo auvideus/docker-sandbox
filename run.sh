@@ -20,6 +20,7 @@ docker run \
     -v $VOL_HOME:/opt/home \
     -v $VOL_DEV:/opt/dev \
     -v $VOL_SECURITY:/opt/security \
+    -e SANDBOX_REPO_NAME=$SANDBOX_REPO_NAME \
     -v //var/run/docker.sock:/var/run/docker.sock \
     sandbox:latest
 docker logs sandbox
