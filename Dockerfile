@@ -46,6 +46,7 @@ COPY config.fish /root/.config/fish/config.fish
 
 RUN updatedb
 
+ENV SANDBOX_USER $user
 ENV SANDBOX_REPO_NAME ""
 
 CMD ["/usr/bin/fish", "--login"]

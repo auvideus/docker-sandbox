@@ -37,6 +37,10 @@ if status --is-login
         /opt/home/.local/share/fish/fish_history \
         /root/.local/share/fish/fish_history
 
+    # ansible-related aliases
+    alias ansible "ansible -u $SANDBOX_USER"
+    alias ansible-playbook "ansible-playbook -u $SANDBOX_USER"
+
     alias do "doctl -t (cat /opt/security/digital_ocean_token)"
     alias repos "cd $REPOS"
     alias gos "cd $GOSRC"
