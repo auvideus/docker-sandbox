@@ -19,6 +19,10 @@ C:/Users/<user>/ # normal Windows user home directory
     id_rsa.pub
 ```
 
+### Configuring Fish
+
+.fish configuration can be placed in the conf.d/ directory in this repo and they will be copied to the image.
+
 ### Configuring Git
 
 Make sure your email and user are set in the `.gitconfig` file on the host.  Setting a Git proxy is optional and will be copied only if it is set on the host.
