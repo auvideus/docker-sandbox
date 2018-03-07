@@ -19,8 +19,10 @@ RUN dnf -y install \
     git \
     go \
     hostname \
+    htop \
     man \
     mlocate \
+    procps-ng \
     python2-pip \
     python3-pip \
     rsync \
