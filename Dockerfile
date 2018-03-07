@@ -45,6 +45,7 @@ RUN curl -L -o doctl.tar.gz https://github.com/digitalocean/doctl/releases/downl
     && tar -zxvf doctl.tar.gz
 
 COPY config.fish /root/.config/fish/config.fish
+COPY conf.d/ /root/.config/fish/conf.d/
 
 RUN updatedb
 
