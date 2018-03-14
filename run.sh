@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 echo -e "\n----> BUILDING SANDBOX CONTAINER\n"
 
 docker build \
@@ -21,6 +23,7 @@ docker run \
     -v $VOL_SECURITY:/opt/security \
     -e SANDBOX_REPO_NAME=$SANDBOX_REPO_NAME \
     -v //var/run/docker.sock:/var/run/docker.sock \
+    -p 4000:4000 \
     sandbox:latest
 
 echo -e "\n----> SHOWING CONTAINER OUTPUT\n"

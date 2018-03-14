@@ -16,16 +16,21 @@ RUN dnf -y install \
     docker-compose \
     file \
     fish \
+    gcc-c++ \
     git \
     go \
     hostname \
     htop \
+    iproute \
     man \
     mlocate \
     procps-ng \
     python2-pip \
     python3-pip \
+    redhat-rpm-config \
     rsync \
+    ruby \
+    ruby-devel \
     vim \
     wget \
     which
@@ -51,5 +56,7 @@ RUN updatedb
 
 ENV SANDBOX_USER $user
 ENV SANDBOX_REPO_NAME ""
+
+EXPOSE 4000
 
 CMD ["/usr/bin/fish", "--login"]

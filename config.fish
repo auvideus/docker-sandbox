@@ -37,11 +37,15 @@ if status --is-login
         /opt/home/.local/share/fish/fish_history \
         /root/.local/share/fish/fish_history
 
+    # Set Ruby environment for Gem persistence
+    set -x GEM_PATH /opt/dev/cache/gems
+    set -x GEM_HOME /opt/dev/cache/gems
+
     alias do "doctl -t (cat /opt/security/digital_ocean_token)"
     alias repos "cd $REPOS"
     alias gos "cd $GOSRC"
 
-    set -x PATH $GOPATH/bin /opt/web $PATH
+    set -x PATH $GOPATH/bin /opt/web /opt/dev/cache/gems/bin $PATH
 
     repos
 end
