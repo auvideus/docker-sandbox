@@ -11,6 +11,7 @@ RUN groupadd $user && useradd -g $user -s /bin/fish $user
 # OS packages
 RUN dnf -y install \
     ansible \
+    autoconf \
     certbot \
     docker \
     docker-compose \
@@ -33,7 +34,8 @@ RUN dnf -y install \
     ruby-devel \
     vim \
     wget \
-    which
+    which \
+    zlib-devel
 
 # Python 2 packages
 RUN pip2 install --upgrade pip
