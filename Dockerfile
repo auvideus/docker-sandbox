@@ -25,6 +25,7 @@ RUN dnf -y install \
     iproute \
     man \
     mlocate \
+    pandoc \
     procps-ng \
     python2-pip \
     python3-pip \
