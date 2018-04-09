@@ -39,12 +39,8 @@ RUN dnf -y install \
     zlib-devel
 
 # Python 2 packages
-RUN pip2 install --upgrade pip
 RUN pip2 install \
     dopy
-
-# Python 3 packages
-RUN pip3 install --upgrade pip
 
 # Built software
 WORKDIR /opt/web
