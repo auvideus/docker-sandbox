@@ -15,6 +15,7 @@ RUN dnf -y install \
     certbot \
     docker \
     docker-compose \
+    dos2unix \
     file \
     fish \
     gcc-c++ \
