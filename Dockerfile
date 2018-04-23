@@ -17,6 +17,7 @@ RUN dnf -y install \
     docker-compose \
     dos2unix \
     file \
+    findutils \
     fish \
     gcc-c++ \
     git \
