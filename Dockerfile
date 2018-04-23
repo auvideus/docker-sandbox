@@ -25,7 +25,7 @@ RUN dnf -y install \
     hostname \
     htop \
     iproute \
-    java-9-openjdk \
+    java-9-openjdk-devel \
     man \
     mlocate \
     pandoc \
