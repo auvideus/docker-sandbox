@@ -12,6 +12,7 @@ RUN groupadd $user && useradd -g $user -s /bin/fish $user
 RUN dnf -y install \
     ansible \
     autoconf \
+    bind-utils \
     certbot \
     docker \
     docker-compose \
