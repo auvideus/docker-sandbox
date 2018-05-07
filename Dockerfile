@@ -29,6 +29,7 @@ RUN dnf -y install \
     java-9-openjdk-devel \
     man \
     mlocate \
+    openssl \
     pandoc \
     procps-ng \
     python2-pip \
